@@ -12,7 +12,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        bat 'python list_anwar.py' ${value1} ${value2}
+        bat 'python parameter_add.py' ${value1} ${value2}
       }
     }
   }
