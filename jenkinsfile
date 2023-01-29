@@ -1,14 +1,18 @@
 pipeline {
   agent any
+  parameters{
+    string defaultValue: "100", description: "choose your value1", value1: "value1"
+    string defaultValue: "200", description: "choose your value2", value2: "value2"
+    }
   stages {
     stage('version') {
       steps {
-        sh 'python3 --version'
+        bat 'python --version'
       }
     }
     stage('hello') {
       steps {
-        sh 'python3 hello.py'
+        bat 'python list_anwar.py' ${value1} ${value2}
       }
     }
   }
